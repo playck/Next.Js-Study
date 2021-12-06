@@ -1,4 +1,6 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,8 +12,18 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Read{" "}
+          <Link href="/posts/first-post">
+            <a>this page!</a>
+          </Link>
         </h1>
+
+        <Image
+          src="/images/종진.jpeg" // Route of the image file
+          height={144} // Desired size with correct aspect ratio
+          width={144} // Desired size with correct aspect ratio
+          alt="Your Name"
+        />
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -54,8 +66,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
 
@@ -205,5 +216,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
